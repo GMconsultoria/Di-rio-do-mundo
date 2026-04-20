@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categoria | Diário do Mundo</title>
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Anúncio Topo -->
+    <div class="ad-container ad-top">
+        <div class="ad-placeholder">Anúncio - Publicidade</div>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="../index.html">Diário do <span>Mundo</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="categoria.html?cat=politica">Política</a></li>
+                    <li><a href="categoria.html?cat=economia">Economia</a></li>
+                    <li><a href="categoria.html?cat=investimentos">Investimentos</a></li>
+                    <li><a href="categoria.html?cat=tecnologia">Ciência e Tecnologia</a></li>
+                    <li><a href="categoria.html?cat=curiosidade">Curiosidade</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar notícias...">
+                <button id="searchBtn">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <section class="recent-news">
+                <h1 class="section-title" id="categoryTitle">Carregando...</h1>
+                <div class="news-list" id="newsList">
+                    <!-- Renderizado via JS -->
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar-ads">
+            <div class="ad-vertical">
+                <div class="ad-placeholder">Anúncio Lateral</div>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Diário do Mundo</div>
+            <p>&copy; 2026 Diário do Mundo - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/render.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const cat = params.get("cat");
+            const query = params.get("q");
+            const titleEl = document.getElementById("categoryTitle");
+            
+            let filtered = [];
+            
+            if (cat) {
+                filtered = Search.filterByCategory(cat);
+                const catName = filtered.length > 0 ? filtered[0].categoriaNome : cat.charAt(0).toUpperCase() + cat.slice(1);
+                titleEl.innerText = `Categoria: ${catName}`;
+                document.title = `${catName} | Diário do Mundo`;
+            } else if (query) {
+                filtered = Search.filterByQuery(query);
+                titleEl.innerText = `Resultados para: \"${query}\"`;
+                document.title = `Busca: ${query} | Diário do Mundo`;
+            } else {
+                filtered = window.noticias;
+                titleEl.innerText = "Todas as Notícias";
+            }
+            
+            Render.renderList(filtered);
+        });
+    </script>
+</body>
+</html>
