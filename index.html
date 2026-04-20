@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário do Mundo | Notícias de Política, Economia e Tecnologia</title>
+    <meta name="description" content="O Diário do Mundo é o seu portal de notícias atualizado sobre política, economia, investimentos, ciência, tecnologia e curiosidades.">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://diariodomundo.com.br/">
+    <meta property="og:title" content="Diário do Mundo | Notícias de Política, Economia e Tecnologia">
+    <meta property="og:description" content="Fique por dentro das principais notícias do Brasil e do mundo.">
+    <meta property="og:image" content="assets/images/politica.jpg">
+</head>
+<body>
+    <!-- Anúncio Topo -->
+    <div class="ad-container ad-top">
+        <div class="ad-placeholder">Anúncio - Publicidade</div>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">Diário do <span>Mundo</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#politica">Política</a></li>
+                    <li><a href="#economia">Economia</a></li>
+                    <li><a href="#investimentos">Investimentos</a></li>
+                    <li><a href="#tecnologia">Ciência e Tecnologia</a></li>
+                    <li><a href="#curiosidade">Curiosidade</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar notícias...">
+                <button id="searchBtn">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Margens laterais para anúncios via CSS -->
+        <div class="content-wrapper">
+            <!-- Seção Principal (Destaque) -->
+            <section class="hero-section">
+                <div class="hero-left">
+                    <article class="featured-news">
+                        <a href="pages/artigo.html">
+                            <img src="assets/images/politica.jpg" alt="Notícia em Destaque Política">
+                            <div class="featured-content">
+                                <span class="category-tag">Política</span>
+                                <h1>Novas diretrizes políticas impactam o cenário nacional e internacional</h1>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+                <div class="hero-right">
+                    <div class="news-grid">
+                        <article class="grid-item">
+                            <a href="pages/artigo.html">
+                                <span class="category-tag">Economia</span>
+                                <img src="assets/images/economia.jpg" alt="Economia">
+                                <h3>Mercado financeiro reage positivamente às novas medidas econômicas</h3>
+                            </a>
+                        </article>
+                        <article class="grid-item">
+                            <a href="pages/artigo.html">
+                                <span class="category-tag">Investimentos</span>
+                                <img src="assets/images/investimentos.jpg" alt="Investimentos">
+                                <h3>Como diversificar sua carteira de investimentos em tempos de incerteza</h3>
+                            </a>
+                        </article>
+                        <article class="grid-item">
+                            <a href="pages/artigo.html">
+                                <span class="category-tag">Tecnologia</span>
+                                <img src="assets/images/tecnologia.jpg" alt="Tecnologia">
+                                <h3>Avanços na Inteligência Artificial prometem revolucionar o mercado de trabalho</h3>
+                            </a>
+                        </article>
+                        <article class="grid-item">
+                            <a href="pages/artigo.html">
+                                <span class="category-tag">Curiosidade</span>
+                                <img src="assets/images/curiosidade.jpg" alt="Curiosidade">
+                                <h3>Descobertas arqueológicas revelam segredos de civilizações perdidas</h3>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Anúncio Meio -->
+            <div class="ad-container ad-middle">
+                <div class="ad-placeholder">Anúncio Horizontal - Publicidade</div>
+            </div>
+
+            <!-- Seção de Notícias Recentes -->
+            <section class="recent-news">
+                <h2 class="section-title">Notícias Recentes</h2>
+                <div class="news-list" id="newsList">
+                    <!-- Conteúdo será populado via JS ou estático para exemplo -->
+                    <article class="news-card">
+                        <img src="assets/images/politica.jpg" alt="Política">
+                        <div class="card-body">
+                            <span class="category-tag">Política</span>
+                            <h3>Câmara aprova projeto de lei que altera tributação sobre lucros</h3>
+                            <p>O projeto segue agora para votação no Senado Federal com expectativa de aprovação rápida.</p>
+                            <a href="pages/artigo.html" class="read-more">Leia mais</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="assets/images/economia.jpg" alt="Economia">
+                        <div class="card-body">
+                            <span class="category-tag">Economia</span>
+                            <h3>Inflação apresenta queda no último trimestre segundo dados do IBGE</h3>
+                            <p>Especialistas apontam que a redução nos preços dos alimentos foi o principal fator.</p>
+                            <a href="pages/artigo.html" class="read-more">Leia mais</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="assets/images/tecnologia.jpg" alt="Tecnologia">
+                        <div class="card-body">
+                            <span class="category-tag">Ciência e Tecnologia</span>
+                            <h3>Novo telescópio espacial captura imagens inéditas de galáxias distantes</h3>
+                            <p>As imagens fornecem dados cruciais para entender a formação do universo primitivo.</p>
+                            <a href="pages/artigo.html" class="read-more">Leia mais</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="pagination">
+                    <button class="btn-more">Ver mais notícias</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar para Anúncios Laterais -->
+        <aside class="sidebar-ads">
+            <div class="ad-vertical">
+                <div class="ad-placeholder">Anúncio Lateral</div>
+            </div>
+            <div class="ad-vertical">
+                <div class="ad-placeholder">Anúncio Lateral</div>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Diário do Mundo</div>
+            <p>&copy; 2026 Diário do Mundo - Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Privacidade</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
